@@ -1,0 +1,878 @@
+<!--<!DOCTYPE html>-->
+{% load static %}
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/responsive-tabs.css' %}" />
+    <link type="text/css" rel="stylesheet" href="{% static 'css/Astyle.css' %}" />
+    <style>
+    body {
+            font-family: "Lato", sans-serif;
+            overflow-x: hidden;
+            background-color: #eee;
+        }
+        .header ul {
+            list-style-type: none;
+            margin-top: -40px;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgb(248, 245, 245);
+            height: 80px;
+        }
+
+        .header li {
+            float: left;
+        }
+
+        .header li a {
+            display: block;
+            color: rgb(48, 47, 47);
+            font-size: 23px;
+            text-align: center;
+            padding: 15px 35px;
+            text-decoration: none;
+        }
+
+        #textcss:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+            color: azure;
+        }
+
+        #textcss1:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+            color: azure;
+        }
+
+        #textcss2:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+            color: azure;
+        }
+
+        #logoimg {
+            margin-top: -50px;
+            margin-right: -40px;
+            height: 190px;
+            width: 200px;
+            margin-left: -10px;
+            background-color: transparent;
+        }
+
+
+        #textcss {
+            margin-top: 10px;
+            margin-left: -30px;
+        }
+
+        #textcss1 {
+            margin-top: 10px;
+            margin-left: -30px;
+        }
+
+        #textcss2 {
+            margin-top: 10px;
+            margin-left: -30px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+        #heading {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 55px;
+            font-weight: bold;
+            color: rgb(71, 71, 71);
+            font-style: oblique;
+        }
+
+
+        .gtrans {
+            margin-left: 25%
+        }
+
+        .container1 {
+            max-width: 100%;
+            margin: auto;
+
+        }
+
+        .row1 {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        section {
+            margin-top: 30px;
+        }
+
+        .foot {
+            margin-bottom: -10px;
+        }
+
+        .footer {
+            position: absolute;
+            left: 0;
+            background: #000;
+            color: #8a8a8a;
+            font-size: 14px;
+            padding: 60px 0 10px;
+            margin-right: -30px;
+        }
+
+        .footer p {
+            color: #8a8a8a;
+
+        }
+
+        .footer-col-1,
+        .footer-col-2,
+        .footer-col-3,
+        .footer-col-4 {
+            min-width: 400px;
+            height: 250px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col-1 {
+            flex-basis: 30%;
+            margin-left: 30px;
+
+        }
+
+        .footer-col-1 img {
+            width: 150px;
+            margin-left: 110px;
+
+        }
+
+        .footer-col-1 p {
+
+            margin-left: 150px;
+            color: #3B9C9C;
+        }
+
+        .footer-col-2 {
+            flex: 1;
+            margin-left: 15px;
+
+        }
+
+        .footer-col-2 input {
+
+            border: 1px solid #3B9C9C;
+            padding: 10px;
+            width: 77%;
+            border-radius: 18px;
+            background-color: black;
+            color: #8a8a8a;
+        }
+
+        .footer-col-2 textarea {
+            border: 1px solid #3B9C9C;
+            border-radius: 18px;
+            text-align: center;
+            width: 77%;
+            color: #8a8a8a;
+            background-color: black;
+
+
+        }
+
+        .btn-primary {
+            box-shadow: none !important;
+            border: none;
+            border-radius: 25px;
+            margin-top: 5px;
+            padding: 10px;
+            background-color: #3B9C9C;
+            width: 110px;
+
+
+        }
+
+        .footer-col-3 {
+            flex-basis: 12%;
+            margin-left: 30px;
+            text-align: left;
+        }
+
+        .footer-col-3 .fa {
+
+            margin-right: 8px;
+            font-size: 25px;
+            height: 40px;
+            width: 40px;
+            text-align: center;
+            padding-top: 7px;
+            color: #3B9C9C;
+            background-color: black;
+        }
+
+        /*to remove bullet style*/
+        ul {
+            list-style-type: none;
+        }
+
+        .copyright {
+            text-align: center;
+
+        }
+
+        /*----------social media--------------*/
+        .social-media {
+            width: 100%;
+            text-align: left;
+        }
+
+        .social-media ul {
+            list-style: none;
+        }
+
+        .social-media ul li {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .social-media img {
+            width: 40px;
+            height: 40px;
+            border-radius: 35px;
+        }
+
+        .bgcart {
+            background-color: none;
+        }
+
+        .bgcart:hover {
+            background-color: none;
+        }
+
+        .cartimg {
+            margin-top: -5px;
+            margin-left: 150px;
+            width: 55px;
+            height: 55px;
+            border-radius: 100px;
+        }
+
+        #quote {
+            margin-top: -250px;
+            margin-left: 600px;
+            margin-bottom: 150px;
+            height: 200px;
+            width: 800px;
+            border-radius: 10px;
+            background: gray;
+            font-size: 26px;
+            color: white;
+        }
+
+        #plt-btn {
+            height: 100px;
+            width: 400px;
+            background-color: rgb(1, 112, 66);
+            border-radius: 3px;
+            color: white;
+            margin-left: 200px;
+            font-size: 30px;
+        }
+
+.r-tabs {
+	position: relative;
+    min-height:300px;
+    width: 80%;
+	margin-left: 180px ;
+	margin-top: 100px;
+	background-color: #02b39e;
+	border-top: 1px solid #00c5ad;
+	border-right: 1px solid #00c5ad;
+	border-left: 1px solid #00c5ad;
+	border-bottom: 4px solid #00c5ad;
+	border-radius: 4px;
+
+}
+#tab-1,#tab-2,#tab-3,#tab-4,#tab-5,#tab-6,#tab-7,#tab-8{
+  min-height:300px;
+}
+.t1,.a1{
+  min-width:148px;
+}
+    </style>
+
+    <link rel="icon" href="{% static 'images/SM.png' %}" type="image/x-icon">
+
+
+</head>
+
+<body>
+    <br><br>
+    <div class='header'>
+        <ul>
+            <!-- src="static/images/crop/carrot.jfif" -->
+            <li><img style="height:130px; width:130px; margin-top:-10px;margin-right:10px"  id='logoimg' src="{% static 'images/SM.png' %}"></li>
+            <li id='textcss'><a href="/index/">Home</a></li>
+            <li id='textcss1'><a href="/about/">About Us</a></li>
+            <li id='textcss2'><a href="/contact/">Contact Us</a></li>
+            <li class="gtrans">
+                <div id="google_translate_element"></div>
+
+                <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+                    }
+                </script>
+
+                <script type="text/javascript"
+                    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+            </li>
+            <li class="bgcart">
+                <a href="/displaycart/"><img class='cartimg' src="{% static 'images/cart1.png' %}"></a>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <center>
+        <h1 id='heading'>
+            Post Harvest Management
+        </h1>
+            </center>
+        <div>
+            <img style="width: 300px; height: 300px; margin-left: 160px" src="{% static 'images/crop/crop.png' %}">
+        </div>
+        <div id="quote" class="css-typing">
+            <center>
+                “Before the fruits of prosperity can come, the storms of life <br>
+                need to first bring the required rains of testing, which mixes <br>
+                with the seeds of wisdom to produce a mature harvest.”<br><br>
+                <i>― Lincoln Patz
+                </i>
+            </center>
+        </div></div>
+
+
+    <div id="horizontalTab">
+        <ul>
+            <li class="t1"><a class="a1" href="#tab-1">Broccoli</a></li>
+            <li class="t1"><a class="a1" href="#tab-2">Cabbage</a></li>
+            <li class="t1"><a class="a1" href="#tab-3">Capsicums</a></li>
+            <li class="t1"><a class="a1" href="#tab-4">Cauliflower</a></li>
+            <li class="t1"><a class="a1" href="#tab-5">Cucumber</a></li>
+            <li class="t1"><a class="a1" href="#tab-6">Beans</a></li>
+            <li class="t1"><a class="a1" href="#tab-7">Brussels sprouts</a></li>
+            <li class="t1"><a class="a1" href="#tab-8">Eggplants</a></li>
+        </ul>
+
+        <div id="tab-1">
+            <center><h2>Broccoli</h2></center>
+            <img height="170px" width="170px" style="border-radius:50%; margin-top:100px" src="{% static 'images/post/brocco.jpg' %}">
+            <p style="margin-top:-250px; margin-left:200px; font-size:18px">
+
+            <p style="margin-top:-250px; margin-left:200px; font-size:18px">
+            <b>Best practice</b><br>
+Broccoli is a flower bud or, more technically, an immature,
+swollen inflorescence. Although the florets do not open after
+harvest, they have a fast respiration rate, respond strongly to
+ethylene and yellow rapidly under ambient conditions.<br>
+Harvest maturity is based on the head diameter required by
+the market. Several picks are often needed to ensure each
+harvest lot has even maturity and size. Overmature heads are
+characterised by loose, open florets and have reduced shelf
+life.<br>
+Broccoli should be cooled below 5°C as soon as possible,
+especially if it has been harvested under warm conditions.
+Below 5°C ethylene sensitivity is reduced, whereas above 5°C
+heads yellow far more quickly. <br><br></p>
+            <p style="margin-left:200px; font-size:18px">
+                <b>Storage life</b><br>
+            Storage life is
+maximised at 0°C
+combined with high
+relative humidity. Storage life
+is relatively unaffected between 0 and 2°C, broccoli usually
+remaining in excellent condition for at least 3–5 weeks at this
+temperature.<br>
+Below 5°C storage life is usually ended by the onset of rots.
+Above 5°C, floret yellowing (due to ethylene) and general
+deterioration end storage life.<br><br></p>
+            <p style="margin-left:200px; font-size:18px">
+               <b>Diseases</b><br>
+            Alternaria spot ‒ Alternaria spp.
+Dark grey to black spreading
+spots appear, usually with
+distinct margins. Rarely found
+on heads, but can occur on
+stems, particularly broccolini.<br><br>
+Bacterial head rot − Erwinia spp.,
+Pseudomonas spp.
+A common postharvest disease, especially
+in broccoli stored for an extended period.
+Infection often occurs in the field, but
+symptoms develop after harvest. Increased
+by prolonged wetness, as can occur if ice
+melts inside cartons.<br><br>
+Bacterial soft rot − Pectobacterium
+carotovorum
+A wet, slimy rot with an unpleasant
+smell. Most often found in the
+stem, but can also infect the head.
+Associated with prolonged wetness, as
+can occur if ice melts inside cartons.<br></p></div>
+        <div id="tab-2">
+            <center><h2>Cabbage</h2></center>
+            <img height="170px" width="170px" style="border-radius:50%; margin-top:100px" src="{% static 'images/post/cabbage.jpg' %}">
+            <p style="margin-top:-250px; margin-left:200px; font-size:18px">
+
+            <p style="margin-top:-250px; margin-left:200px; font-size:18px">
+            <b>Best practice</b><br>
+Cabbages are harvested when the heads are firm and heavy
+and the size is appropriate ot the market.
+Cabbage leaves often have a waxy bloom, which is particularly
+obvious in coloured varieties. This, combined with their dense,
+overlapping leaf structure, helps protects them from water
+loss. The squeakiness of the leaves when rubbed together can
+be considered a sign of freshness.<br>
+Cabbages have a long storage life, especially if cooled close to
+0°C soon after harvest. However, their dense internal structure
+makes them relatively slow to cool. Vacuum cooling is less
+efficient for cabbage than most other leafy vegetables.<br>
+While not chilling-sensitive, cabbage is susceptible to freezing
+injury. Freezing can become an issue when cabbages are
+stored at 0°C, particularly for heads placed close to the
+delivery air. <br><br></p>
+            <p style="margin-left:200px; font-size:18px">
+                <b>Storage life</b><br>
+            Storage life of cabbage is maximised at 0°C combined with
+high relative humidity. Under these conditions cabbages can
+remain in good condition for 2 to 4 months, depending on the
+cultivar as well as seasonal conditions.<br>
+Although storage life is reduced to 3–6 weeks at 2–4°C, this
+reduces costs and is usually long enough for normal transport
+and retail. <br><br></p>
+            <p style="margin-left:200px; font-size:18px">
+               <b>Diseases</b><br>
+            White mould − Sclerotinia
+sclerotiorum.
+White mould first appears as a watery,
+light brown rot that spreads rapidly.
+In humid environments, white cottony
+mould develops and is followed by
+hard black fruiting bodies (sclerotia).
+Mainly a problem in coastal areas and
+where cool, moist conditions occur.<br><br>
+Alternaria rot − Alternaria brassiciola
+Dark grey to black spots spread
+over the leaves. These have
+a sunken centre with distinct
+margins, often surrounded by a
+yellow halo. Favoured by warm,
+wet weather, with spores spread
+in wind and water.<br><br>
+Bacterial soft rot − Pectobacterium
+carotovorum
+A wet slimy rot, often starting in the cut
+base. Tissue becomes water-soaked and
+disintegrates, often with an unpleasant
+smell. Symptoms can develop soon
+after harvest.<br></p>
+        </div>
+        <div id="tab-3">
+            <center><h2>Capsicums</h2></center>
+            <img height="170px" width="170px" style="border-radius:50%; margin-top:100px" src="{% static 'images/post/capsi.jpg' %}">
+            <p style="margin-top:-250px; margin-left:200px; font-size:18px">
+
+            <p style="margin-top:-250px; margin-left:200px; font-size:18px">
+            <b>Best practice</b><br>
+Capsicums (and chillies) are unique vegetables with special
+qualities that set them apart. Botanically a fruit, they may be
+harvested green and immature or when fully coloured. While
+full red fruit are usually the highest price, leaving the crop to
+mature can increase losses and so reduce yield.<br>
+Market preferences are for capsicums that are either fully
+green or fully red (or yellow, orange, purple, depending on
+variety). Capsicums are ‘non-climacteric’, meaning they cannot
+be ripened after harvest. Treating capsicums with ethylene will
+have little effect on colour change, but does increase softening
+and disease development. Partially coloured fruit will continue
+to change if held at 12°C−20°C, but may not reach the same
+colour intensity as fruit picked at a later stage. <br><br></p>
+            <p style="margin-left:200px; font-size:18px">
+                <b>Storage life</b><br>
+            Capsicum storage life is highly dependent on maturity, variety
+and growing conditions. Storage life is also extremely variable,
+as it is usually ended by rots. These can affect one or two fruit
+within a carton while leaving the others untouched. <br>
+            Although considered chillingsensitive, capsicums response to low
+temperature varies according to growing conditions, variety
+and maturity. In general, red capsicums are less chillingsensitive than green fruit. Trials with greenhouse grown
+capsicums found that storage life was maximised at 0°C for red
+capsicums and 2°C for green capsicums<br><br></p>
+            <p style="margin-left:200px; font-size:18px">
+               <b>Diseases</b><br>
+            Alternaria ‒ Alternaria spp.
+Alternaria often appears where fruit
+have been damaged by factors such
+as blossom end rot, chilling injury,
+or physical damage. Sunken lesions
+develop, with a centre full of fine black
+spores. These multiply during storage.<br><br>
+Anthracnose – Colletotrichum spp.
+Although infection by anthracnose
+usually occurs during production,
+symptoms often appear after harvest.
+Characteristic round lesions form with
+black or brown spores, sometimes
+forming a target pattern.<br><br>
+Bacterial soft rot ‒ Erwinia spp., Xanthomonas campestris
+Soft rots are a common cause of the end
+of storage life for capsicums. Unlike
+fungal diseases, bacterial infections
+often initially grow through the flesh
+without breaking the waxy skin. The
+flesh turns brown and liquefies, often
+with an unpleasant smell.<br></p></div>
+        <div id="tab-4">
+            <center><h2>Cauliflower</h2></center>
+            <img height="170px" width="170px" style="border-radius:50%; margin-top:100px" src="{% static 'images/post/cauli.jpg' %}">
+            <p style="margin-top:-250px; margin-left:200px; font-size:18px">
+
+            <p style="margin-top:-250px; margin-left:200px; font-size:18px">
+            <b>Best practice</b><br>
+Cauliflower should be cooled to below 5°C as soon as possible,
+especially if it has been harvested under warm conditions.
+It should also be handled gently, as the delicate curds are
+easily bruised and broken. Harvest aids that avoid damaging
+cauliflowers can improve subsequent storage life.<br>
+Forced air and hydro-vacuum systems are both effective
+methods to cool cauliflower. Room cooling in bins is not
+recommended unless heads are already less than 15°C at
+harvest. If using hydrocooling, it is important to allow enough
+time for the core to cool thoroughly. Cauliflowers must be
+dried thoroughly before packing.<br><br></p>
+            <p style="margin-left:200px; font-size:18px">
+                <b>Storage life</b><br>
+            Storage life is
+maximised at close
+to 0°C combined with
+95–100% RH. Under these conditions
+cauliflower can remain in good condition for up to 4 weeks,
+depending on the cultivar and seasonal conditions.
+At warmer temperatures cauliflowers deteriorate rapidly,
+becoming soft and discoloured within only a few days at 10°C
+or higher.<br>
+Packaging can extend cauliflower storage life by protecting
+the delicate curds as well as maintaining high RH around
+the head. Although modified atmospheres have been shown
+experimentally to extend cauliflower storage life, they are not
+used commercially.<br><br></p>
+            <p style="margin-left:200px; font-size:18px">
+               <b>Diseases</b><br>
+            Alternaria head rot ‒ Alternaria
+brassicae
+Black, sunken spots appear on
+individual florets.<br><br>
+Bacterial head rot − Erwinia spp.
+A common postharvest disease,
+especially if cauliflowers are stored
+for an extended period. Infection
+often occurs in the field, but
+symptoms develop after harvest.
+Increased by condensation in
+storage.<br><br>
+White mould − Sclerotinia spp.
+Infection usually occurs pre-harvest,
+but the fungus can continue to grow
+and develop during storage.<br></p>
+        </div>
+        <div id="tab-5">
+            <center><h2>Cucumber</h2></center>
+            <img height="170px" width="170px" style="border-radius:50%; margin-top:100px" src="{% static 'images/post/cucu.jpg' %}">
+            <p style="margin-top:-250px; margin-left:200px; font-size:18px">
+
+            <p style="margin-top:-250px; margin-left:200px; font-size:18px">
+            <b>Best practice</b><br>
+Cucumbers are fruit, and approximately 95% water. They are
+harvested while still immature, before the seeds enlarge and
+harden. In some varieties the core flesh develops a translucent
+appearance at maturity.<br>
+Cucumbers are extremely variable. Some varieties (green
+field, crystal, apple) have a relatively hard, waxy skin.
+Others (Continental, Lebanese) have a thin skin that is easily
+damaged. Gentle handling of these varieties is essential
+to prevent cuts, scratches or bruises, as these are likely to
+develop into rots.<br>
+Cucumbers should never be packed wet as this is likely
+to increase disease. Washing thin skinned varieties is not
+recommended.<br></p>
+            <p style="margin-left:200px; font-size:18px">
+                <b>Storage life</b><br>
+            Temperatures below 7–10°C reduce storage life due to chilling
+damage. At temperatures over 12°C cucumbers rapidly yellow
+and rot.<br>
+Thin skinned varieties are particularly sensitive to chilling
+damage, with as little as 1–2 days at 2°C enough to induce
+symptoms in susceptible fruit.<br>
+Storage life varies widely between varieties, and even between
+individual batches of fruit. It is generally ended by rots,
+although at higher temperatures yellowing is also a significant
+issue.<br>
+Packaging can extend storage life, especially for thin skinned
+varieties. Modified atmosphere packaging can increase storage
+life, especially at chilling temperatures. However, packaging
+that creates a beneficial atmosphere (high CO2 and low O2)
+at low temperatures results in anaerobic conditions when
+cucumbers warm up. <br><br></p>
+            <p style="margin-left:200px; font-size:18px">
+               <b>Diseases</b><br>
+            Fusarium ‒ Fusarium spp.
+Postharvest infection by fusarium is
+usually the result of injuries or chilling
+stress. Sunken lesions are topped with
+white, downy growth on the fruit surface,
+and black spore development.<br><br>
+Grey mould – Botrytis spp.
+Infection with botrytis often occurs during flowering. However,
+the fungus is unable to develop until after harvest. Brown,
+water-soaked lesions often develop from the blossom end,
+topped with soft, grey fungal growth.<br></p></div>
+
+
+    <div id="tab-6">
+            <center><h2>Bean</h2></center>
+            <img height="170px" width="170px" style="border-radius:50%; margin-top:100px" src="{% static 'images/post/bean.jpg' %}">
+            <p style="margin-top:-250px; margin-left:200px; font-size:18px">
+
+            <p style="margin-top:-250px; margin-left:200px; font-size:18px">
+            <b>Best practice</b><br>
+Beans are an immature seedpod. They are growing and
+developing rapidly at harvest maturity, have relatively little
+protection against moisture loss and hardly any storage
+reserves. Moreover, they are sensitive to chilling, so cannot be
+stored below 5°C for more than a few days.<br>
+To maintain quality, beans should be harvested when
+conditions are cool (overnight or early morning) and cooled as
+quickly as possible to around 6–8°C. Hydrocooling or hydrovacuum cooling are suitable methods.
+Keeping humidity high (approx. 95%) can reduce water loss.
+In this environment beans can last up to 12 days in fresh
+condition. <br><br></p>
+            <p style="margin-left:200px; font-size:18px">
+                <b>Storage life</b><br>
+            The storage life of beans is generally maximised between 6
+and 9°C, depending on growing conditions and the chilling
+sensitivity of the variety.<br>
+The time until chilling injury occurs is temperature dependent:
+at 5°C symptoms can take a week to appear, whereas at 1°C
+damage may be obvious after only two days.<br>
+Beans are also very sensitive to high temperatures. Storage at
+over 12°C results in rapid weight loss, shrivelling and softening.<br><br></p>
+            <p style="margin-left:200px; font-size:18px">
+               <b>Diseases</b><br>
+            Anthracnose ‒ Colletotrichum lindemuthianum
+Distinct, small reddish brown to black circular lesions appear
+on the pods. Mature lesions have a grey centre with blackened
+margin and, under moist conditions, can produce masses of
+pink spores. Mainly a pre-harvest disease, but symptoms can
+worsen significantly after harvest.<br><br>
+Cottony leak ‒ Pythium aphanidermatum
+This watery soft rot can develop on pods during transport and
+storage. The initial lesion develops into white, cottony growth.
+This mats pods together, forming a soft, leaking mass.<br><br>
+Grey mould ‒ Botrytis cinerea
+Infection with grey mould often occurs
+during flowering. However, symptoms
+often only appear after harvest.
+The spores are also present in the
+environment and on a wide range of
+hosts. Infection can spread rapidly after
+harvest, even during low-temperature
+storage.<br></p></div>
+        <div id="tab-7">
+            <center><h2>Brussels sprouts</h2></center>
+            <img height="170px" width="170px" style="border-radius:50%; margin-top:100px" src="{% static 'images/post/bru.jpg' %}">
+            <p style="margin-top:-250px; margin-left:200px; font-size:18px">
+
+            <p style="margin-top:-250px; margin-left:200px; font-size:18px">
+            <b>Best practice</b><br>
+Brussels sprouts are closely related to cabbages. The sprouts
+are young leaf buds, produced in a spiral up the main stalk.
+Good quality Brussels sprouts are small, sweet and tender
+with bright green leaflets and a clean, white cut where they
+have been trimmed from the stalk. The buds should be tight
+and firm; loose, split leaflets or elongation of the central stem
+indicate overmaturity.<br>
+Brussels sprouts are very ethylene sensitive so should be
+cooled below 5°C as soon as possible, especially if they have
+been harvested under warm conditions. Below 5°C ethylene
+sensitivity is reduced, whereas above 5°C outer leaves yellow
+more quickly.<br><br></p>
+            <p style="margin-left:200px; font-size:18px">
+                <b>Storage life</b><br>
+            Storage life of Brussels sprouts is maximised at 0°C combined
+with high relative humidity. Under these conditions sprouts
+can remain in good condition for 3−5 weeks. Storage life is
+similar between 0–3°C but decreases markedly at 5°C due to
+yellowing of the outer leaflets.<br>
+Although there are reports that Brussels sprouts respond
+to modified atmosphere storage, the benefits appear
+to be relatively modest. It has been reported that CO2
+concentrations of around 10% combined with 2–5% oxygen
+can delay yellowing of the outer leaves. However, more
+extreme atmospheres can induce bitterness and off odours.
+<br><br></p>
+            <p style="margin-left:200px; font-size:18px">
+               <b>Diseases</b><br>
+            Bacterial rot − Erwinia spp., Pseudomonas
+spp., Pectobacterium carotovorum.
+Although rots are not a common issue
+with Brussels sprouts, they can occur
+with prolonged storage. Bacterial rots are
+mostly found in the base, but can also
+affect the outer leaflets. Rot is increased by
+prolonged wetness, as can occur if sprouts
+are packed in ice and the ice melts.<br><br>
+Peppery leaf spot − Pseudomonas syringae pv. maculicola
+A pre-harvest disease, but symptoms can increase
+postharvest. Small black to
+purple spots and speckles
+develop on the leaves. Increased
+by cool, wet conditions during
+growth and sprouts remaining
+wet when packed.<br></p></div>
+        <div id="tab-8">
+            <center><h2>Eggplants</h2></center>
+            <img height="170px" width="170px" style="border-radius:50%; margin-top:100px" src="{% static 'images/post/egg.jpg' %}">
+            <p style="margin-top:-250px; margin-left:200px; font-size:18px">
+
+            <p style="margin-top:-250px; margin-left:200px; font-size:18px">
+            <b>Best practice</b><br>
+Eggplants are immature fruit. If left on the plant past optimum
+maturity the flesh becomes spongy and the seeds develop and
+darken. Eggplants should always be harvested by cutting, not
+pulling off the plant.<br>
+Eggplant cultivars vary widely in colour, shape and size. They
+can be grown in the open field or under protected cropping
+systems. Both variety and the production system strongly
+affect storage characteristics.<br>
+All eggplants have a smooth, glossy skin with no stomata or
+lenticels. This makes them relatively resistant to water loss.
+However, if the skin is damaged or broken, eggplants will
+deteriorate quickly. Moreover, even small amounts of moisture
+loss cause noticeable softening.<br><br></p>
+            <p style="margin-left:200px; font-size:18px">
+                <b>Storage life</b><br>
+            Storage life of most eggplant
+varieties is maximised between
+10–14°C.<br>
+Chilling injury decreases quality
+within a few days if temperatures fall
+below 5°C. At higher temperatures,
+storage life is ended by softening and rots.<br><br></p>
+            <p style="margin-left:200px; font-size:18px">
+               <b>Diseases</b><br>
+            Chilling injury-
+Eggplants can be damaged by storage
+at temperatures below 10°C. Iniital
+symptoms may be the appearance of
+brown, scalded areas on the fruit skin.
+More advanced chilling injury results
+in sunken brown pits in the flesh and
+premature disease development.
+Even slight chilling damage can result
+in darkening of the internal flesh,
+especially around the developing
+seeds. Chilling damage may be
+increased by ethylene in the storage
+environment.<br><br>
+Sunburn
+Sunburned areas on eggplant turn brown.
+Although they may be initially firm,
+sunburned areas are likely to soften and
+sink during storage.<br></p></div>
+            </div>
+
+    <!-- jQuery with fallback to the 1.* for old IE -->
+    <!--[if lt IE 9]>
+    <script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+        <script src="{% static 'js/jquery-2.1.0.min.js' %}"></script>
+    <!--<![endif]-->
+
+    <!-- Responsive Tabs JS -->
+    <script src="{% static 'js/jquery.responsiveTabs.js' %}" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var $tabs = $('#horizontalTab');
+            $tabs.responsiveTabs({
+                rotate: false,
+                startCollapsed: 'accordion',
+                collapsible: 'accordion',
+                setHash: true,
+<!--                disabled: [3,4],-->
+                click: function(e, tab) {
+                    $('.info').html('Tab <strong>' + tab.id + '</strong> clicked!');
+                },
+                activate: function(e, tab) {
+                    $('.info').html('Tab <strong>' + tab.id + '</strong> activated!');
+                },
+                activateState: function(e, state) {
+                    //console.log(state);
+                    $('.info').html('Switched from <strong>' + state.oldState + '</strong> state to <strong>' + state.newState + '</strong> state!');
+                }
+            });
+
+        });
+    </script>
+
+    <section class="foot">
+        <div class="footer">
+            <div class="container1">
+                <div class="row1">
+                    <div class="footer-col-1">
+                        <img src="{% static 'images/SM.png' %}">
+                        <a href="">
+                            <p>About us</p>
+                        </a>
+                        <a href="">
+                            <p>Contact us</p>
+                        </a>
+                    </div>
+
+
+
+                    <div class="footer-col-2">
+
+                        <p><b>FEEDBACK FORM</b></p>
+                        <input type="email" placeholder="ENTER YOUR NAME">
+                        <input type="email" placeholder="ENTER VALID EMAIL ADDRESS">
+                        <textarea rows="5" cols="50" style="width:80%; height: 80px;">ENTER YOUR FEEDBACK
+        </textarea><br>
+                        <button type="button" class="btn btn-primary">SUBMIT</button>
+                    </div>
+                    <div class=" footer-col-3">
+                        <p></p>
+                        <p><i class="fa fa-map-marker"></i> S.N.D.T. Santacruz,Mumbai 400049</p>
+                        <p><i class="fa fa-envelope-o"></i> info.e-kisan@gmail.com</p>
+                        <p><i class="fa fa-phone"></i> 9323131444</p>
+                        <div class="social-media">
+                            <ul>
+                                <li><img src="{% static 'images/face.png' %}"></li>
+                                <li><img src="{% static 'images/twitter.png' %}"></li>
+                                <li><img src="{% static 'images/insta.png' %}"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- <hr> -->
+                <p class="copyright">Copyright 2021 Shetkari Market</p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
